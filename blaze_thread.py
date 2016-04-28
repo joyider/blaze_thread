@@ -20,8 +20,6 @@
 # Filename:  by: andrek
 # Timesamp: 4/28/16 :: 11:14 PM
 
-# -*- coding: utf-8 -*-
-
 import sys
 import time
 import threading
