@@ -250,7 +250,7 @@ class Scheduler(object):
 		if thread:
 			delta = thread.waiting_time_delta
 			self.waiting_time_delta = (self.waiting_time_delta * self.switches_count + delta) / (
-			self.switches_count + 1)
+				self.switches_count + 1)
 			self.switches_count += 1
 			value = thread.run()
 			if not value is None:
@@ -268,12 +268,13 @@ class Scheduler(object):
 
 	def __repr__(self):
 		return 'Scheduler: avg wait time: %f total switches: %0.4f max threads: %d' % (
-		self.waiting_time_delta, self.switches_count, self.max_threads)
+			self.waiting_time_delta, self.switches_count, self.max_threads)
 
 
 if __name__ == "__main__":
 	import random
 
+	print "Start..."
 	scheduler = Scheduler()
 
 
@@ -284,8 +285,7 @@ if __name__ == "__main__":
 			self.last_logged = time.time()
 
 		def log(self, str):
-			print
-			"id: %d, time=%s, elapsed=%f event - %s" % (self.id, time.time(), time.time() - self.last_logged, str)
+			print "id: %d, time=%s, elapsed=%f event - %s" % (self.id, time.time(), time.time() - self.last_logged, str)
 
 		def process(self):
 			self.log('started')
@@ -312,8 +312,7 @@ if __name__ == "__main__":
 			self.last_logged = time.time()
 
 		def log(self, str):
-			print
-			"id: %d, time=%s, elapsed=%f event - %s" % (self.id, time.time(), time.time() - self.last_logged, str)
+			print "id: %d, time=%s, elapsed=%f event - %s" % (self.id, time.time(), time.time() - self.last_logged, str)
 			self.last_logged = time.time()
 
 		def process(self):
